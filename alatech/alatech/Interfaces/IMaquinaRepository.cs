@@ -8,5 +8,7 @@ namespace alatech.Interfaces
         List<Machine> GetMaquinas();
 
         List<Machine> SearchMaquinas(string parametroBusca);
+
+        Machine PostMaquina(Machine maquina);
     }
 }
