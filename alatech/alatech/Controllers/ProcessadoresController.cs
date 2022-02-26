@@ -43,7 +43,7 @@ namespace alatech.Controllers
 
         [HttpGet("{parametroBusca}")]
         [Authorize]
-        public IActionResult BuscarPlacasMae(string parametroBusca)
+        public IActionResult BuscarProcessadores(string parametroBusca)
         {
             try
             {

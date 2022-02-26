@@ -20,7 +20,7 @@ namespace alatech.Controllers
 
         [HttpGet]
         [Authorize]
-        public IActionResult ListarProcessadores()
+        public IActionResult ListarDspArmz()
         {
             try
             {
@@ -43,7 +43,7 @@ namespace alatech.Controllers
 
         [HttpGet("{parametroBusca}")]
         [Authorize]
-        public IActionResult BuscarPlacasMae(string parametroBusca)
+        public IActionResult BuscarDspArmz(string parametroBusca)
         {
             try
             {

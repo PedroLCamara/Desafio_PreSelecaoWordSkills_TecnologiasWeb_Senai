@@ -8,7 +8,7 @@ namespace alatech.Utils
 {
     public static class Upload
     {
-        public static string UploadFile(IFormFile arquivo, int IdObjImg)
+        public static string UploadFile(IFormFile arquivo)
         {
             try
             {
