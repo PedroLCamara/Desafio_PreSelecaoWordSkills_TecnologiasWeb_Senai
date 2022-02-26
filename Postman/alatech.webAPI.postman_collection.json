@@ -1,0 +1,788 @@
+{
+	"info": {
+		"_postman_id": "803d3c65-1b40-4638-883d-4ca65770a467",
+		"name": "alatech.webAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login.Controller",
+			"item": [
+				{
+					"name": "Login.Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4NDIwOCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VqjZZC1wIdj2IJ8zjrFl_YM4_Lxa8xNvf3ohtFToGi0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login.Logar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senha\": \"joaomartinscoube\",\r\n    \"nomeDeUsuario\": \"senai_701\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PlacasMae.Controller",
+			"item": [
+				{
+					"name": "PlacasMae.Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/PlacasMae",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"PlacasMae"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PlacasMae.Buscar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/PlacasMae/AQUA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"PlacasMae",
+								"AQUA"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Processadores.Controller",
+			"item": [
+				{
+					"name": "Processadores.Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Processadores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Processadores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar.Processadores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Processadores/i9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Processadores",
+								"i9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MemoriasRam.Controller",
+			"item": [
+				{
+					"name": "MemoriasRam.Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/MemoriasRam",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"MemoriasRam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MemoriasRam.Buscar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/MemoriasRam/32GB",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"MemoriasRam",
+								"32GB"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DispositivosArmazenamento.Controller",
+			"item": [
+				{
+					"name": "DispositivosArmazenamento.Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/DispositivosArmazenamento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"DispositivosArmazenamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DispositivosArmazenamento.Buscar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/DispositivosArmazenamento/Seagate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"DispositivosArmazenamento",
+								"Seagate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PlacasVideo.Controller",
+			"item": [
+				{
+					"name": "PlacasVideo.Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/PlacasVideo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"PlacasVideo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PlacasVideo.Buscar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/PlacasVideo/Radeon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"PlacasVideo",
+								"Radeon"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fontes.Controller",
+			"item": [
+				{
+					"name": "Fontes.Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Fontes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Fontes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fontes.Buscar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Fontes/AX",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Fontes",
+								"AX"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Maquinas.Controller",
+			"item": [
+				{
+					"name": "Maquinas.Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Maquinas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Maquinas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Maquinas.Buscar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM4OTk0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.VAWIBrWz-3zvUdrYfHFdSuKy7H5XKLz63paLNZVgU6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Maquinas/be",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Maquinas",
+								"be"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Maquinas.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTg0NDkxMCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.Lmz9jYbFhojS756xUXESTrTzUhJaA9nMWma6MfQPypE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPlacaMae\": 1,\r\n  \"idFonte\": 1,\r\n  \"idProcessador\": 1,\r\n  \"idMemoriaRam\": 1,\r\n  \"qntMemoriaRam\": 4,\r\n  \"idPlacaVideo\": 5,\r\n  \"qntPlacaVideo\": 2,\r\n  \"nome\": \"pc teste\",\r\n  \"descricao\": \"teste\",\r\n  \"dispositivosDeArmazenamento\": [\r\n    {\r\n      \"idDspArmazenamento\": 4,\r\n      \"qntDspArmazenamento\": 8\r\n    }, \r\n    {\r\n        \"idDspArmazenamento\": 1,\r\n        \"qntDspArmazenamento\": 2\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Maquinas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Maquinas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Maquinas.Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTg1MjU0MiwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.AEXu2l7y1q5akIBJcCgopYr6rA6g6Vo_d7FzX31qqHo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPlacaMae\": 1,\r\n  \"idFonte\": 1,\r\n  \"idProcessador\": 1,\r\n  \"idMemoriaRam\": 1,\r\n  \"qntMemoriaRam\": 4,\r\n  \"idPlacaVideo\": 5,\r\n  \"qntPlacaVideo\": 2,\r\n  \"nome\": \"pc teste\",\r\n  \"descricao\": \"teste\",\r\n  \"dispositivosDeArmazenamento\": [\r\n    {\r\n      \"idDspArmazenamento\": 4,\r\n      \"qntDspArmazenamento\": 8\r\n    }, \r\n    {\r\n        \"idDspArmazenamento\": 1,\r\n        \"qntDspArmazenamento\": 0\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Maquinas/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Maquinas",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Maquinas.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTg1MjU0MiwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.AEXu2l7y1q5akIBJcCgopYr6rA6g6Vo_d7FzX31qqHo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Maquinas/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Maquinas",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Maquinas.AtualizarImg",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTkwMTI2NywiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.O5s374sm61SRfOud4so0ZWDFmIFMeb56Xf_YEi5FAmE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Img",
+									"type": "file",
+									"src": "/C:/Users/Pichau/Desktop/ImgCadastroMaquina.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Maquinas/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Maquinas",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Imagens.Controller",
+			"item": [
+				{
+					"name": "Imagens.Buscar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTM5OTM0NCwiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.HtLSVWfzqTYXGRJ9ybj8YyPy-JCTT_deF4xYKIH9GAY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/Images/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"Images",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VerificarCompatibilidade.Controller",
+			"item": [
+				{
+					"name": "VerificarCompatibilidade.VerificarCompatibilidade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJqb2FvbWFydGluc2NvdWJlIiwianRpIjoiMSIsImV4cCI6MTY0NTkwMTI2NywiaXNzIjoiYWxhdGVjaC53ZWJBUEkiLCJhdWQiOiJhbGF0ZWNoLndlYkFQSSJ9.O5s374sm61SRfOud4so0ZWDFmIFMeb56Xf_YEi5FAmE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPlacaMae\": 1,\r\n  \"idFonte\": 1,\r\n  \"idProcessador\": 1,\r\n  \"idMemoriaRam\": 1,\r\n  \"qntMemoriaRam\": 1,\r\n  \"idPlacaVideo\": 5,\r\n  \"qntPlacaVideo\": 1,\r\n  \"dispositivosDeArmazenamento\": [\r\n    {\r\n      \"idDspArmazenamento\": 1,\r\n      \"qntDspArmazenamento\": 1\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/alatech/api/VerificarCompatibilidade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"alatech",
+								"api",
+								"VerificarCompatibilidade"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
