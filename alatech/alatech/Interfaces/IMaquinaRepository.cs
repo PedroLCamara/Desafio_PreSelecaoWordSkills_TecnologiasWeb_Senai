@@ -14,6 +14,8 @@ namespace alatech.Interfaces
         Machine PostMaquina(Machine maquina);
 
         Machine RetornarMaquina(CadastroMaquinaViewModel maquina);
+        
+        Machine RetornarMaquina(VerificarIncompatibilidadeViewModel maquina);
 
         Machine PutMaquina(Machine maquina);
 

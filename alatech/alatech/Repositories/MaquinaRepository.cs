@@ -97,6 +97,45 @@ namespace alatech.Repositories
             return retorno;
         }
 
+        public Machine RetornarMaquina(VerificarIncompatibilidadeViewModel maquina)
+        {
+            ICollection<Machinehasstoragedevice> ListaDspArmazenamentoMaquina = new List<Machinehasstoragedevice>();
+
+            if (maquina.DispositivosDeArmazenamento != null)
+            {
+                foreach (DispositivoArmazenamentoViewModel item in maquina.DispositivosDeArmazenamento)
+                {
+                    Storagedevice testee = Ctx.Storagedevices.ToList().Find(sd => sd.Id == item.IdDspArmazenamento);
+                    Machinehasstoragedevice MaquinaDspArmazenamento = new Machinehasstoragedevice()
+                    {
+                        StorageDeviceId = item.IdDspArmazenamento,
+                        StorageDevice = Ctx.Storagedevices.ToList().Find(sd => sd.Id == item.IdDspArmazenamento),
+                        Amount = item.QntDspArmazenamento
+                    };
+                    ListaDspArmazenamentoMaquina.Add(MaquinaDspArmazenamento);
+                }
+            }
+
+            Machine retorno = new Machine()
+            {
+                MotherboardId = maquina.IdPlacaMae,
+                Motherboard = Ctx.Motherboards.ToList().Find(m => m.Id == maquina.IdPlacaMae),
+                PowerSupplyId = maquina.IdFonte,
+                PowerSupply = Ctx.Powersupplies.ToList().Find(p => p.Id == maquina.IdFonte),
+                ProcessorId = maquina.IdProcessador,
+                Processor = Ctx.Processors.ToList().Find(p => p.Id == maquina.IdProcessador),
+                RamMemoryId = maquina.IdMemoriaRam,
+                RamMemory = Ctx.Rammemories.ToList().Find(rm => rm.Id == maquina.IdMemoriaRam),
+                RamMemoryAmount = maquina.QntMemoriaRam,
+                GraphicCardId = maquina.IdPlacaVideo,
+                GraphicCard = Ctx.Graphiccards.ToList().Find(gc => gc.Id == maquina.IdPlacaVideo),
+                GraphicCardAmount = maquina.QntPlacaVideo,
+                Machinehasstoragedevices = ListaDspArmazenamentoMaquina
+            };
+
+            return retorno;
+        }
+
         public List<Machine> SearchMaquinas(string parametroBusca)
         {
             return Ctx.Machines.ToList().FindAll(m => m.Name.Contains(parametroBusca));

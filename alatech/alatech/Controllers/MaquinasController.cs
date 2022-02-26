@@ -262,5 +262,56 @@ namespace alatech.Controllers
                 throw;
             }
         }
+
+        [HttpPatch("{idMaquina}")]
+        [Authorize]
+        public IActionResult AtualizarImagemMaquina(int idMaquina, IFormFile Img)
+        {
+            try
+            {
+                Microsoft.Extensions.Primitives.StringValues headerValues;
+                Request.Headers.TryGetValue("Authorization", out headerValues);
+                string Token = headerValues.ToString();
+                if (ValidacaoToken.ValidarToken(Token) == false)
+                {
+                    return StatusCode(403, new { message = "token inválido" });
+                }
+
+                Machine MaquinaAttImg = _maquinaRepository.GetByIdMaquina(idMaquina);
+
+                if (MaquinaAttImg == null)
+                {
+                    return NotFound(new { message = "Id da máquina inválido" });
+                }
+
+                if (Img == null)
+                {
+                    return BadRequest(new { message = "Arquivo não encontrado" });
+                }
+
+                string uploadResultado = Upload.UploadFile(Img);
+
+                if (uploadResultado == "")
+                {
+                    return BadRequest(new { message = "Arquivo não encontrado" });
+                }
+
+                if (uploadResultado == "Extensão não permitida")
+                {
+                    return BadRequest(new { message = "Extensão de arquivo não permitida" });
+                }
+
+                MaquinaAttImg.ImageUrl = uploadResultado.Split(".")[0];
+
+                _maquinaRepository.PutMaquina(MaquinaAttImg);
+
+                return Ok(MaquinaAttImg);
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+                throw;
+            }
+        }
     }
 }

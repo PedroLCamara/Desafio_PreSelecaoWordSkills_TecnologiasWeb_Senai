@@ -32,7 +32,7 @@ namespace alatech.ViewModels
         [Required(ErrorMessage = "Descrição da máquina inválido")]
         public string Descricao { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Dispositivo(s) de armazenamento inválido(s)")]
         public List<DispositivoArmazenamentoViewModel> DispositivosDeArmazenamento { get; set; }
     }
 }
