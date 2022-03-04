@@ -7,6 +7,9 @@ using System;
 
 namespace alatech.Controllers
 {
+    /// <summary>
+    /// Controlador responsável por definir os endpoints relacionados as memorias RAM
+    /// </summary>
     [Route("alatech/api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -18,6 +21,10 @@ namespace alatech.Controllers
             _memoriaRamRepository = contexto;
         }
 
+        /// <summary>
+        /// Endpoint de listagem de memorias RAM
+        /// </summary>
+        /// <returns>Lista de memorias RAM em formato JSON</returns>
         [HttpGet]
         [Authorize]
         public IActionResult ListarMemoRam()
@@ -41,6 +48,11 @@ namespace alatech.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint de busca de uma ou mais memorias RAM por uma query (string)
+        /// </summary>
+        /// <param name="parametroBusca">Query de busca</param>
+        /// <returns>Memoria(s) RAM em formato JSON</returns>
         [HttpGet("{parametroBusca}")]
         [Authorize]
         public IActionResult BuscarMemoRam(string parametroBusca)

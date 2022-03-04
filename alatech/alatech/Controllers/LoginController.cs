@@ -13,6 +13,9 @@ using System.Collections.Generic;
 
 namespace alatech.Controllers
 {
+    /// <summary>
+    /// Controlador responsável por definir os endpoints relacionados ao login 
+    /// </summary>
     [Route("alatech/api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -25,6 +28,11 @@ namespace alatech.Controllers
             _usuarioRepository = contexto;
         }
 
+        /// <summary>
+        /// Endpoint responsável por realizar o login de um usuário e retornar seu token
+        /// </summary>
+        /// <param name="UsuarioLogin">Usuário a fazer login</param>
+        /// <returns>Token em formato JSON</returns>
         [HttpPost]
         public IActionResult Logar(LoginViewModel UsuarioLogin)
         {
@@ -74,6 +82,10 @@ namespace alatech.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint responsável pelo logout de um usuário
+        /// </summary>
+        /// <returns>Mensagem informando o decorrer do logout em formato JSON</returns>
         [HttpDelete]
         public IActionResult Deslogar()
         {

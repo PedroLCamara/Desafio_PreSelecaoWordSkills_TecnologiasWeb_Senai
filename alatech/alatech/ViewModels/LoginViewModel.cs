@@ -2,6 +2,9 @@
 
 namespace alatech.ViewModels
 {
+    /// <summary>
+    /// Classe para a definição do objeto JSON (usuario) utilizado no Login
+    /// </summary>
     public class LoginViewModel
     {
         [Required(ErrorMessage = "Senha inválida")]

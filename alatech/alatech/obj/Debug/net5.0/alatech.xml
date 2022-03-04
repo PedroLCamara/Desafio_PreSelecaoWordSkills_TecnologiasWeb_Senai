@@ -4,5 +4,741 @@
         <name>alatech</name>
     </assembly>
     <members>
+        <member name="T:alatech.Controllers.DispositivosArmazenamentoController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados aos dipositivos de armazenamento
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.DispositivosArmazenamentoController.ListarDspArmz">
+            <summary>
+            Endpoint de listagem de dispositivos de armazenamento
+            </summary>
+            <returns>Lista de dispositivos de armazenamento em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.DispositivosArmazenamentoController.BuscarDspArmz(System.String)">
+            <summary>
+            Endpoint de busca de um ou mais dispositivos de armazenamento por uma query (string)
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Dispositivo(s) de armazenamento em formato JSON</returns>
+        </member>
+        <member name="T:alatech.Controllers.FontesController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados as fontes
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.FontesController.ListarFontes">
+            <summary>
+            Endpoint de listagem de fontes
+            </summary>
+            <returns>Lista de fontes em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.FontesController.BuscarFontes(System.String)">
+            <summary>
+            Endpoint de busca de uma ou mais fontes por uma query (string)
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Fonte(s) em formato JSON</returns>
+        </member>
+        <member name="T:alatech.Controllers.ImagesController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados as imagens 
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.ImagesController.BuscarPorId(System.Int32)">
+            <summary>
+            Endpoint responsável por buscar uma imagem pelo nome de seu arquivo (desconsiderando extensao)
+            </summary>
+            <param name="IdImg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:alatech.Controllers.LoginController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados ao login 
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.LoginController.Logar(alatech.ViewModels.LoginViewModel)">
+            <summary>
+            Endpoint responsável por realizar o login de um usuário e retornar seu token
+            </summary>
+            <param name="UsuarioLogin">Usuário a fazer login</param>
+            <returns>Token em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.LoginController.Deslogar">
+            <summary>
+            Endpoint responsável pelo logout de um usuário
+            </summary>
+            <returns>Mensagem informando o decorrer do logout em formato JSON</returns>
+        </member>
+        <member name="T:alatech.Controllers.MaquinasController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados as maquinas
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.MaquinasController.ListarMaquinas">
+            <summary>
+            Endpoint de listagem de maquinas
+            </summary>
+            <returns>Lista de maquinas em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.MaquinasController.BuscarMaquinas(System.String)">
+            <summary>
+            Endpoint de busca de uma ou mais maquinas por uma query (string)
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Maquina(s) em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.MaquinasController.AdicionarMaquina(alatech.ViewModels.CadastroMaquinaViewModel)">
+            <summary>
+            Endpoint responsável por cadastrar uma nova maquina
+            </summary>
+            <param name="MaquinaRequisicao">Maquina a ser cadastrada</param>
+            <returns>Resultado do cadastro em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.MaquinasController.AtualizarMaquina(alatech.ViewModels.CadastroMaquinaViewModel,System.Int32)">
+            <summary>
+            Endpoint responsavel por atualizar uma maquina
+            </summary>
+            <param name="MaquinaRequisicao">Maquina atualizada</param>
+            <param name="IdMaquina">Id da maquina a ser atualizada</param>
+            <returns>Resultado da atualizacao em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.MaquinasController.DeletarMaquina(System.Int32)">
+            <summary>
+            Endpoint responsavel por deletar uma maquina
+            </summary>
+            <param name="idMaquina">Id da maquina a ser deletada</param>
+            <returns>Resultado da remocao em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.MaquinasController.AtualizarImagemMaquina(System.Int32,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Endpoint responsavel por atualizar a imagem de uma maquina
+            </summary>
+            <param name="idMaquina">Id da maquina</param>
+            <param name="Img">Imagem</param>
+            <returns>Resultado da atualizacao de imagem em formato JSON</returns>
+        </member>
+        <member name="T:alatech.Controllers.MemoriasRamController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados as memorias RAM
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.MemoriasRamController.ListarMemoRam">
+            <summary>
+            Endpoint de listagem de memorias RAM
+            </summary>
+            <returns>Lista de memorias RAM em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.MemoriasRamController.BuscarMemoRam(System.String)">
+            <summary>
+            Endpoint de busca de uma ou mais memorias RAM por uma query (string)
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Memoria(s) RAM em formato JSON</returns>
+        </member>
+        <member name="T:alatech.Controllers.PlacasMaeController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados as placas mae
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.PlacasMaeController.ListarPlacasMae">
+            <summary>
+            Endpoint de listagem de placas mae
+            </summary>
+            <returns>Lista de placas mae em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.PlacasMaeController.BuscarPlacasMae(System.String)">
+            <summary>
+            Endpoint de busca de uma ou mais placas mae por uma query (string)
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>-Placa(s) mae em formato JSON</returns>
+        </member>
+        <member name="T:alatech.Controllers.PlacasVideoController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados as placas de video
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.PlacasVideoController.ListarPlacasVideo">
+            <summary>
+            Endpoint de listagem de placas de video
+            </summary>
+            <returns>Lista de placas de video em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.PlacasVideoController.BuscarPlacasVideo(System.String)">
+            <summary>
+            Endpoint de busca de uma ou mais placas de video por uma query (string)
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>-Placa(s) de video em formato JSON</returns>
+        </member>
+        <member name="T:alatech.Controllers.ProcessadoresController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados aos processadores
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.ProcessadoresController.ListarProcessadores">
+            <summary>
+            Endpoint de listagem de processadores
+            </summary>
+            <returns>Lista de processadores em formato JSON</returns>
+        </member>
+        <member name="M:alatech.Controllers.ProcessadoresController.BuscarProcessadores(System.String)">
+            <summary>
+            Endpoint de busca de um ou mais processadores por uma query (string)
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Processador(es) em formato JSON</returns>
+        </member>
+        <member name="T:alatech.Controllers.VerificarCompatibilidadeController">
+            <summary>
+            Controlador responsável por definir os endpoints relacionados a verificacao de compatibilidade 
+            </summary>
+        </member>
+        <member name="M:alatech.Controllers.VerificarCompatibilidadeController.VerificarIncompatibilidade(alatech.ViewModels.VerificarIncompatibilidadeViewModel)">
+            <summary>
+            Endpoint responsável por verificar a compatibilidade entre pecas
+            </summary>
+            <param name="Consulta">Objeto que contem as pecas</param>
+            <returns>Resultados da analise de compatibilidade em formato JSON</returns>
+        </member>
+        <member name="T:alatech.Interfaces.IDispositivoArmazenamentoRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de StorageDevice dentro da aplicação
+            </summary>
+        </member>
+        <member name="M:alatech.Interfaces.IDispositivoArmazenamentoRepository.GetDispositivosArmazenamento">
+            <summary>
+            Lista todos os dispositivos de armazenamento
+            </summary>
+            <returns>Lista de dispositivos de armazenamento</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IDispositivoArmazenamentoRepository.SearchDispositivosArmazenamento(System.String)">
+            <summary>
+            Pesquisa um ou mais dispositivo de armazenamento por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Dispositivo(s) encontrado(s)</returns>
+        </member>
+        <member name="T:alatech.Interfaces.IFonteRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de PowerSupply dentro da aplicação
+            </summary>
+        </member>
+        <member name="M:alatech.Interfaces.IFonteRepository.GetFontes">
+            <summary>
+            Lista todas as fontes
+            </summary>
+            <returns>Lista de fontes</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IFonteRepository.SearchFontes(System.String)">
+            <summary>
+            Pesquisa uma ou mais fontes por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Fonte(s) encontrada(s)</returns>
+        </member>
+        <member name="T:alatech.Interfaces.IMaquinaRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de user dentro da aplicação
+            </summary>
+        </member>
+        <member name="M:alatech.Interfaces.IMaquinaRepository.GetMaquinas">
+            <summary>
+            Lista todas as maquinas
+            </summary>
+            <returns>Uma lista de maquinas</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IMaquinaRepository.SearchMaquinas(System.String)">
+            <summary>
+            Pesquisa uma ou mais maquinas por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Maquina(s) encontrada(s)</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IMaquinaRepository.PostMaquina(alatech.Domains.Machine)">
+            <summary>
+            Cadastra uma maquina
+            </summary>
+            <param name="maquina">Maquina a ser cadastrada</param>
+            <returns>Maquina cadastrada</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IMaquinaRepository.RetornarMaquina(alatech.ViewModels.CadastroMaquinaViewModel)">
+            <summary>
+            Retorna uma maquina com base em um objeto CadastroMaquinaViewModel
+            </summary>
+            <param name="maquina">Objeto</param>
+            <returns>Retorno (objeto Machine)</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IMaquinaRepository.RetornarMaquina(alatech.ViewModels.VerificarIncompatibilidadeViewModel)">
+            <summary>
+            Retorna uma maquina com base em um objeto VerificarIncompatibilidadeViewModel
+            </summary>
+            <param name="maquina">Objeto</param>
+            <returns>Retorno (objeto Machine)</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IMaquinaRepository.PutMaquina(alatech.Domains.Machine)">
+            <summary>
+            Atualiza uma maquina
+            </summary>
+            <param name="maquina">Maquina a ser atualizada</param>
+            <returns>Maquina atualizada</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IMaquinaRepository.GetByIdMaquina(System.Int32)">
+            <summary>
+            Pesquisa uma maquina pelo seu id
+            </summary>
+            <param name="id">Id da busca</param>
+            <returns>Maquina encontrada</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IMaquinaRepository.DeleteMaquina(System.Int32)">
+            <summary>
+            Deleta uma maquina
+            </summary>
+            <param name="id">Id da maquina a ser deletada</param>
+        </member>
+        <member name="T:alatech.Interfaces.IMemoriaRamRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de Rammemory dentro da aplicação
+            </summary>
+        </member>
+        <member name="M:alatech.Interfaces.IMemoriaRamRepository.GetMemoriasRam">
+            <summary>
+            Lista todas as memorias RAM
+            </summary>
+            <returns>Lista de memorias RAM</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IMemoriaRamRepository.SearchMemoriasRam(System.String)">
+            <summary>
+            Pesquisa uma ou mais memorias RAM por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Memoria(s) RAM encontrada(s)</returns>
+        </member>
+        <member name="T:alatech.Interfaces.IPlacaMaeRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de motherboard dentro da aplicação
+            </summary>
+        </member>
+        <member name="M:alatech.Interfaces.IPlacaMaeRepository.GetPlacasMae">
+            <summary>
+            Lista todas as placas mae
+            </summary>
+            <returns>Lista de placas mae</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IPlacaMaeRepository.SearchPlacasMae(System.String)">
+            <summary>
+            Pesquisa uma ou mais placas mae por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Placa(s) mae encontrada(s)</returns>
+        </member>
+        <member name="T:alatech.Interfaces.IPlacaVideoRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de graphiccard dentro da aplicação
+            </summary>
+        </member>
+        <member name="M:alatech.Interfaces.IPlacaVideoRepository.GetPlacasVideo">
+            <summary>
+            Lista todas as placas de video
+            </summary>
+            <returns>Lista de placas de video</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IPlacaVideoRepository.SearchPlacasVideo(System.String)">
+            <summary>
+            Pesquisa uma ou mais placas de video por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Placa(s) de video encontrada(s)</returns>
+        </member>
+        <member name="T:alatech.Interfaces.IProcessadorRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de processor dentro da aplicação
+            </summary>
+        </member>
+        <member name="M:alatech.Interfaces.IProcessadorRepository.GetProcessadores">
+            <summary>
+            Lista todos os processadores
+            </summary>
+            <returns>Lista de processadores</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IProcessadorRepository.SearchProcessadores(System.String)">
+            <summary>
+            Pesquisa um ou mais processadores por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Processador(es) encontrado(s)</returns>
+        </member>
+        <member name="T:alatech.Interfaces.IUsuarioRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de user dentro da aplicação
+            </summary>
+        </member>
+        <member name="M:alatech.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Login com base em um nome de usuario e uma senha
+            </summary>
+            <param name="username">Nome de usuario de um formulario</param>
+            <param name="senha">Senha de um formulario</param>
+            <returns>O usuario encontrado</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IUsuarioRepository.Logout(System.String)">
+            <summary>
+            Remove um token do Banco de Dados
+            </summary>
+            <param name="token">Token</param>
+            <returns>True (removido) ou false (inexistente)</returns>
+        </member>
+        <member name="M:alatech.Interfaces.IUsuarioRepository.SalvarToken(System.String,alatech.Domains.User)">
+            <summary>
+            Salva um token no Banco de Dados
+            </summary>
+            <param name="token">Token</param>
+            <param name="UsuarioNovoToken">Usuario a receber o token</param>
+        </member>
+        <member name="M:alatech.Interfaces.IUsuarioRepository.CriptografarSenha(alatech.Domains.User)">
+            <summary>
+            Criptografa uma senha
+            </summary>
+            <param name="_usuario">Usuario a ter a senha criptografada</param>
+        </member>
+        <member name="T:alatech.Repositories.DispositivoArmazenamentoRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de StorageDevice dentro da aplicação
+            </summary>
+        </member>
+        <member name="F:alatech.Repositories.DispositivoArmazenamentoRepository.Ctx">
+            <summary>
+            Context responsavel pelas conexoes com o BD
+            </summary>
+        </member>
+        <member name="M:alatech.Repositories.DispositivoArmazenamentoRepository.GetDispositivosArmazenamento">
+            <summary>
+            Lista todos os dispositivos de armazenamento
+            </summary>
+            <returns>Lista de dispositivos de armazenamento</returns>
+        </member>
+        <member name="M:alatech.Repositories.DispositivoArmazenamentoRepository.SearchDispositivosArmazenamento(System.String)">
+            <summary>
+            Pesquisa um ou mais dispositivo de armazenamento por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Dispositivo(s) encontrado(s)</returns>
+        </member>
+        <member name="T:alatech.Repositories.FonteRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de PowerSupply dentro da aplicação
+            </summary>
+        </member>
+        <member name="F:alatech.Repositories.FonteRepository.Ctx">
+            <summary>
+            Context responsavel pelas conexoes com o BD
+            </summary>
+        </member>
+        <member name="M:alatech.Repositories.FonteRepository.GetFontes">
+            <summary>
+            Lista todas as fontes
+            </summary>
+            <returns>Lista de fontes</returns>
+        </member>
+        <member name="M:alatech.Repositories.FonteRepository.SearchFontes(System.String)">
+            <summary>
+            Pesquisa uma ou mais fontes por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Fonte(s) encontrada(s)</returns>
+        </member>
+        <member name="T:alatech.Repositories.MaquinaRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de user dentro da aplicação
+            </summary>
+        </member>
+        <member name="F:alatech.Repositories.MaquinaRepository.Ctx">
+            <summary>
+            Context responsavel pelas conexoes com o BD
+            </summary>
+        </member>
+        <member name="M:alatech.Repositories.MaquinaRepository.DeleteMaquina(System.Int32)">
+            <summary>
+            Deleta uma maquina
+            </summary>
+            <param name="id">Id da maquina a ser deletada</param>
+        </member>
+        <member name="M:alatech.Repositories.MaquinaRepository.GetByIdMaquina(System.Int32)">
+            <summary>
+            Pesquisa uma maquina pelo seu id
+            </summary>
+            <param name="id">Id da busca</param>
+            <returns>Maquina encontrada</returns>
+        </member>
+        <member name="M:alatech.Repositories.MaquinaRepository.GetMaquinas">
+            <summary>
+            Lista todas as maquinas
+            </summary>
+            <returns>Uma lista de maquinas</returns>
+        </member>
+        <member name="M:alatech.Repositories.MaquinaRepository.PostMaquina(alatech.Domains.Machine)">
+            <summary>
+            Cadastra uma maquina
+            </summary>
+            <param name="maquina">Maquina a ser cadastrada</param>
+            <returns>Maquina cadastrada</returns>
+        </member>
+        <member name="M:alatech.Repositories.MaquinaRepository.PutMaquina(alatech.Domains.Machine)">
+            <summary>
+            Atualiza uma maquina
+            </summary>
+            <param name="maquina">Maquina a ser atualizada</param>
+            <returns>Maquina atualizada</returns>
+        </member>
+        <member name="M:alatech.Repositories.MaquinaRepository.RetornarMaquina(alatech.ViewModels.CadastroMaquinaViewModel)">
+            <summary>
+            Retorna uma maquina com base em um objeto CadastroMaquinaViewModel
+            </summary>
+            <param name="maquina">Objeto</param>
+            <returns>Retorno (objeto Machine)</returns>
+        </member>
+        <member name="M:alatech.Repositories.MaquinaRepository.RetornarMaquina(alatech.ViewModels.VerificarIncompatibilidadeViewModel)">
+            <summary>
+            Retorna uma maquina com base em um objeto VerificarIncompatibilidadeViewModel
+            </summary>
+            <param name="maquina">Objeto</param>
+            <returns>Retorno (objeto Machine)</returns>
+        </member>
+        <member name="M:alatech.Repositories.MaquinaRepository.SearchMaquinas(System.String)">
+            <summary>
+            Pesquisa uma ou mais maquinas por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Maquina(s) encontrada(s)</returns>
+        </member>
+        <member name="T:alatech.Repositories.MemoriaRamRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de Rammemory dentro da aplicação
+            </summary>
+        </member>
+        <member name="F:alatech.Repositories.MemoriaRamRepository.Ctx">
+            <summary>
+            Context responsavel pelas conexoes com o BD
+            </summary>
+        </member>
+        <member name="M:alatech.Repositories.MemoriaRamRepository.GetMemoriasRam">
+            <summary>
+            Lista todas as memorias RAM
+            </summary>
+            <returns>Lista de memorias RAM</returns>
+        </member>
+        <member name="M:alatech.Repositories.MemoriaRamRepository.SearchMemoriasRam(System.String)">
+            <summary>
+            Pesquisa uma ou mais memorias RAM por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Memoria(s) RAM encontrada(s)</returns>
+        </member>
+        <member name="T:alatech.Repositories.PlacaMaeRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de motherboard dentro da aplicação
+            </summary>
+        </member>
+        <member name="F:alatech.Repositories.PlacaMaeRepository.Ctx">
+            <summary>
+            Context responsavel pelas conexoes com o BD
+            </summary>
+        </member>
+        <member name="M:alatech.Repositories.PlacaMaeRepository.GetPlacasMae">
+            <summary>
+            Lista todas as placas mae
+            </summary>
+            <returns>Lista de placas mae</returns>
+        </member>
+        <member name="M:alatech.Repositories.PlacaMaeRepository.SearchPlacasMae(System.String)">
+            <summary>
+            Pesquisa uma ou mais placas mae por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Placa(s) mae encontrada(s)</returns>
+        </member>
+        <member name="T:alatech.Repositories.PlacaVideoRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de graphiccard dentro da aplicação
+            </summary>
+        </member>
+        <member name="F:alatech.Repositories.PlacaVideoRepository.Ctx">
+            <summary>
+            Context responsavel pelas conexoes com o BD
+            </summary>
+        </member>
+        <member name="M:alatech.Repositories.PlacaVideoRepository.GetPlacasVideo">
+            <summary>
+            Lista todas as placas de video
+            </summary>
+            <returns>Lista de placas de video</returns>
+        </member>
+        <member name="M:alatech.Repositories.PlacaVideoRepository.SearchPlacasVideo(System.String)">
+            <summary>
+            Pesquisa uma ou mais placas de video por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Placa(s) de video encontrada(s)</returns>
+        </member>
+        <member name="T:alatech.Repositories.ProcessadorRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de processor dentro da aplicação
+            </summary>
+        </member>
+        <member name="F:alatech.Repositories.ProcessadorRepository.Ctx">
+            <summary>
+            Context responsavel pelas conexoes com o BD
+            </summary>
+        </member>
+        <member name="M:alatech.Repositories.ProcessadorRepository.GetProcessadores">
+            <summary>
+            Lista todos os processadores
+            </summary>
+            <returns>Lista de processadores</returns>
+        </member>
+        <member name="M:alatech.Repositories.ProcessadorRepository.SearchProcessadores(System.String)">
+            <summary>
+            Pesquisa um ou mais processadores por uma query de busca
+            </summary>
+            <param name="parametroBusca">Query de busca</param>
+            <returns>Processador(es) encontrado(s)</returns>
+        </member>
+        <member name="T:alatech.Repositories.UsuarioRepository">
+            <summary>
+            Define as ações CRUD que seram realizadas com a entidade de user dentro da aplicação
+            </summary>
+        </member>
+        <member name="F:alatech.Repositories.UsuarioRepository.Ctx">
+            <summary>
+            Context responsavel pelas conexoes com o BD
+            </summary>
+        </member>
+        <member name="M:alatech.Repositories.UsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Login com base em um nome de usuario e uma senha
+            </summary>
+            <param name="username">Nome de usuario de um formulario</param>
+            <param name="senha">Senha de um formulario</param>
+            <returns>O usuario encontrado</returns>
+        </member>
+        <member name="M:alatech.Repositories.UsuarioRepository.Logout(System.String)">
+            <summary>
+            Remove um token do Banco de Dados
+            </summary>
+            <param name="token">Token</param>
+            <returns>True (removido) ou false (inexistente)</returns>
+        </member>
+        <member name="M:alatech.Repositories.UsuarioRepository.SalvarToken(System.String,alatech.Domains.User)">
+            <summary>
+            Salva um token no Banco de Dados
+            </summary>
+            <param name="token">Token</param>
+            <param name="UsuarioNovoToken">Usuario a receber o token</param>
+        </member>
+        <member name="M:alatech.Repositories.UsuarioRepository.CriptografarSenha(alatech.Domains.User)">
+            <summary>
+            Criptografa uma senha
+            </summary>
+            <param name="_usuario">Usuario a ter a senha criptografada</param>
+        </member>
+        <member name="T:alatech.Utils.Criptografia">
+            <summary>
+            Classe utilizada para definir os métodos que envolvem a criptografia de uma senha
+            </summary>
+        </member>
+        <member name="M:alatech.Utils.Criptografia.GerarHash(System.String)">
+            <summary>
+            Gera a senha criptografada (com BCrypt)
+            </summary>
+            <param name="Senha">Senha do formulario, fornecida pelo usuario</param>
+            <returns>Senha criptografada</returns>
+        </member>
+        <member name="M:alatech.Utils.Criptografia.Comparar(System.String,System.String)">
+            <summary>
+            Compara uma senha normal com uma senha criptografada proveniente do Banco de Dados
+            </summary>
+            <param name="SenhaForm">Senha da requisicao (string comum)</param>
+            <param name="SenhaBanco">Senha criptografada</param>
+            <returns>True (Senhas compatíveis) ou false (senhas incompatíveis)</returns>
+        </member>
+        <member name="M:alatech.Utils.Criptografia.ValidarCriptografia(System.String)">
+            <summary>
+            Valida a criptografia de uma string (senha)
+            </summary>
+            <param name="SenhaBanco">Senha proveniente do Banco de Dados</param>
+            <returns>True (criptografada) ou false (nao criptografada)</returns>
+        </member>
+        <member name="M:alatech.Utils.Upload.UploadFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Salva um arquivo de imagem .png no diretório StativFiles/Images
+            </summary>
+            <param name="arquivo">Arquivo .png</param>
+            <returns>Caminho completo da imagem em formato de string</returns>
+        </member>
+        <member name="M:alatech.Utils.Upload.ValidarExtensao(System.String)">
+            <summary>
+            Valida a extensao do arquivo (.png)
+            </summary>
+            <param name="nomeDoArquivo">Nome do arquivo</param>
+            <returns>True (extensao .png) ou false (extensao != .png)</returns>
+        </member>
+        <member name="M:alatech.Utils.Upload.RetornarExtensao(System.String)">
+            <summary>
+            Retorna a extensção do nome do arquivo
+            </summary>
+            <param name="nomeDoArquivo">Nome do arquivo</param>
+            <returns>Extensao (ex: .png, .jpeg ...)</returns>
+        </member>
+        <member name="M:alatech.Utils.Upload.RemoverArquivo(System.String)">
+            <summary>
+            Remove um arquivo com base no nome
+            </summary>
+            <param name="nomeDoArquivo">Nome do arquivo</param>
+        </member>
+        <member name="M:alatech.Utils.Upload.BuscarEConverterImagem(System.Int32)">
+            <summary>
+            Busca uma imagem e a converte para uma string Base64
+            </summary>
+            <param name="IdImg">Nome da imagem salvo no Banco de Dados</param>
+            <returns>String Base64</returns>
+        </member>
+        <member name="M:alatech.Utils.ValidacaoToken.ValidarToken(System.String)">
+            <summary>
+            Valida a existência do token no Banco de Dados
+            </summary>
+            <param name="token">Token a ser validado</param>
+            <returns>True (valido) ou false (invalido)</returns>
+        </member>
+        <member name="T:alatech.Utils.VerificarIncompatibilidades">
+            <summary>
+            Verifica diferentes casos de possíveis incompatibilidades em uma máquina
+            </summary>
+        </member>
+        <member name="T:alatech.ViewModels.CadastroMaquinaViewModel">
+            <summary>
+            Classe para definir o objeto JSON da requisicao de cadastro de uma nova máquina
+            </summary>
+        </member>
+        <member name="T:alatech.ViewModels.DispositivoArmazenamentoViewModel">
+            <summary>
+            Classe para a definição de um dispositivo de armazenamento no cadastro de uma nova máquina
+            </summary>
+        </member>
+        <member name="T:alatech.ViewModels.IncompatibilidadeViewModel">
+            <summary>
+            Classe para o retorno de incompatibilidades encontradas como objetos JSON
+            </summary>
+        </member>
+        <member name="T:alatech.ViewModels.LoginViewModel">
+            <summary>
+            Classe para a definição do objeto JSON (usuario) utilizado no Login
+            </summary>
+        </member>
+        <member name="T:alatech.ViewModels.VerificarIncompatibilidadeViewModel">
+            <summary>
+            Classe para definir o objeto JSON da requisicao de consulta de incompatibilidades
+            </summary>
+        </member>
     </members>
 </doc>

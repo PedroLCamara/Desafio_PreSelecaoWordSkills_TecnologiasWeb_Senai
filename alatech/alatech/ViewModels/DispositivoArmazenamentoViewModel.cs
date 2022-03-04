@@ -2,6 +2,9 @@
 
 namespace alatech.ViewModels
 {
+    /// <summary>
+    /// Classe para a definição de um dispositivo de armazenamento no cadastro de uma nova máquina
+    /// </summary>
     public class DispositivoArmazenamentoViewModel
     {
         [Required(ErrorMessage = "Id de dispositivo de armazenamento inválido")]

@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace alatech.ViewModels
 {
+    /// <summary>
+    /// Classe para definir o objeto JSON da requisicao de cadastro de uma nova máquina
+    /// </summary>
     public class CadastroMaquinaViewModel
     {
         [Required(ErrorMessage = "Id de placa mãe inválido")]

@@ -10,6 +10,9 @@ using System.Collections.Generic;
 
 namespace alatech.Controllers
 {
+    /// <summary>
+    /// Controlador responsável por definir os endpoints relacionados a verificacao de compatibilidade 
+    /// </summary>
     [Route("alatech/api/[controller]")]
     [ApiController]
     public class VerificarCompatibilidadeController : ControllerBase
@@ -20,6 +23,11 @@ namespace alatech.Controllers
             _maquinaRepository = contexto;
         }
 
+        /// <summary>
+        /// Endpoint responsável por verificar a compatibilidade entre pecas
+        /// </summary>
+        /// <param name="Consulta">Objeto que contem as pecas</param>
+        /// <returns>Resultados da analise de compatibilidade em formato JSON</returns>
         [HttpPost]
         [Authorize]
         public IActionResult VerificarIncompatibilidade(VerificarIncompatibilidadeViewModel Consulta)

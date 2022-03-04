@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace alatech.ViewModels
 {
+    /// <summary>
+    /// Classe para definir o objeto JSON da requisicao de consulta de incompatibilidades
+    /// </summary>
     public class VerificarIncompatibilidadeViewModel
     {
         [Required(ErrorMessage = "Id de placa mãe inválido")]

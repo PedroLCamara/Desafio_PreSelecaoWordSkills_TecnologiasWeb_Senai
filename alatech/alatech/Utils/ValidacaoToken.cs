@@ -8,6 +8,11 @@ namespace alatech.Utils
     {
         private static alatechContext Ctx = new alatechContext();
 
+        /// <summary>
+        /// Valida a existência do token no Banco de Dados
+        /// </summary>
+        /// <param name="token">Token a ser validado</param>
+        /// <returns>True (valido) ou false (invalido)</returns>
         public static bool ValidarToken(string token)
         {
             User UsuarioConsulta = Ctx.Users.FirstOrDefault(u => "Bearer " + u.AccessToken == token);

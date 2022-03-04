@@ -34,6 +34,7 @@ namespace alatech
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //Adiciona os controllers
             services
               .AddControllers()
               .AddNewtonsoftJson(options => {
@@ -41,6 +42,7 @@ namespace alatech
                   options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
               });
 
+            //Adiciona as configurações do Cors permitindo requisicoes de qualquer origem
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -52,6 +54,7 @@ namespace alatech
                                 });
             });
 
+            //Adiciona a documentacao do Swagger
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "alatech.webAPI" });
@@ -62,6 +65,7 @@ namespace alatech
                 c.IncludeXmlComments(xmlPath);
             });
 
+            //Adiciona a autenticacao com o uso de JWT
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = "JwtBearer";
@@ -81,6 +85,7 @@ namespace alatech
                 };
                 options.Events = new JwtBearerEvents
                 {
+                    //Adiciona retornos personalizados aos erros de autenticacao e autorizacao
                     OnAuthenticationFailed = async (context) =>
                     {
                         context.Response.StatusCode = 403;

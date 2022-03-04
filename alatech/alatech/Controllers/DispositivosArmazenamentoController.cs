@@ -7,6 +7,9 @@ using System;
 
 namespace alatech.Controllers
 {
+    /// <summary>
+    /// Controlador responsável por definir os endpoints relacionados aos dipositivos de armazenamento
+    /// </summary>
     [Route("alatech/api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -18,6 +21,10 @@ namespace alatech.Controllers
             _dispositivoArmazenamentoRepository = contexto;
         }
 
+        /// <summary>
+        /// Endpoint de listagem de dispositivos de armazenamento
+        /// </summary>
+        /// <returns>Lista de dispositivos de armazenamento em formato JSON</returns>
         [HttpGet]
         [Authorize]
         public IActionResult ListarDspArmz()
@@ -41,6 +48,11 @@ namespace alatech.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint de busca de um ou mais dispositivos de armazenamento por uma query (string)
+        /// </summary>
+        /// <param name="parametroBusca">Query de busca</param>
+        /// <returns>Dispositivo(s) de armazenamento em formato JSON</returns>
         [HttpGet("{parametroBusca}")]
         [Authorize]
         public IActionResult BuscarDspArmz(string parametroBusca)

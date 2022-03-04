@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace alatech.Controllers
 {
+    /// <summary>
+    /// Controlador responsável por definir os endpoints relacionados as maquinas
+    /// </summary>
     [Route("alatech/api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -22,6 +25,10 @@ namespace alatech.Controllers
             _maquinaRepository = contexto;
         }
 
+        /// <summary>
+        /// Endpoint de listagem de maquinas
+        /// </summary>
+        /// <returns>Lista de maquinas em formato JSON</returns>
         [HttpGet]
         [Authorize]
         public IActionResult ListarMaquinas()
@@ -45,6 +52,11 @@ namespace alatech.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint de busca de uma ou mais maquinas por uma query (string)
+        /// </summary>
+        /// <param name="parametroBusca">Query de busca</param>
+        /// <returns>Maquina(s) em formato JSON</returns>
         [HttpGet("{parametroBusca}")]
         [Authorize]
         public IActionResult BuscarMaquinas(string parametroBusca)
@@ -68,6 +80,11 @@ namespace alatech.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint responsável por cadastrar uma nova maquina
+        /// </summary>
+        /// <param name="MaquinaRequisicao">Maquina a ser cadastrada</param>
+        /// <returns>Resultado do cadastro em formato JSON</returns>
         [HttpPost]
         [Authorize]
         public IActionResult AdicionarMaquina(CadastroMaquinaViewModel MaquinaRequisicao)
@@ -146,6 +163,12 @@ namespace alatech.Controllers
             }
         }
         
+        /// <summary>
+        /// Endpoint responsavel por atualizar uma maquina
+        /// </summary>
+        /// <param name="MaquinaRequisicao">Maquina atualizada</param>
+        /// <param name="IdMaquina">Id da maquina a ser atualizada</param>
+        /// <returns>Resultado da atualizacao em formato JSON</returns>
         [HttpPut("{idMaquina}")]
         [Authorize]
         public IActionResult AtualizarMaquina(CadastroMaquinaViewModel MaquinaRequisicao, int IdMaquina)
@@ -233,6 +256,11 @@ namespace alatech.Controllers
                 throw;
             }
         }
+        /// <summary>
+        /// Endpoint responsavel por deletar uma maquina
+        /// </summary>
+        /// <param name="idMaquina">Id da maquina a ser deletada</param>
+        /// <returns>Resultado da remocao em formato JSON</returns>
         [HttpDelete("{idMaquina}")]
         [Authorize]
         public IActionResult DeletarMaquina(int idMaquina)
@@ -252,6 +280,7 @@ namespace alatech.Controllers
                 }
                 else
                 {
+                    Upload.RemoverArquivo(_maquinaRepository.GetByIdMaquina(idMaquina).ImageUrl + ".png");
                     _maquinaRepository.DeleteMaquina(idMaquina);
                     return NoContent();
                 }
@@ -263,6 +292,12 @@ namespace alatech.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint responsavel por atualizar a imagem de uma maquina
+        /// </summary>
+        /// <param name="idMaquina">Id da maquina</param>
+        /// <param name="Img">Imagem</param>
+        /// <returns>Resultado da atualizacao de imagem em formato JSON</returns>
         [HttpPatch("{idMaquina}")]
         [Authorize]
         public IActionResult AtualizarImagemMaquina(int idMaquina, IFormFile Img)

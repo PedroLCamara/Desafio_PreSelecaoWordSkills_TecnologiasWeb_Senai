@@ -7,6 +7,9 @@ using System;
 
 namespace alatech.Controllers
 {
+    /// <summary>
+    /// Controlador responsável por definir os endpoints relacionados as fontes
+    /// </summary>
     [Route("alatech/api/[controller]")]
     [ApiController]
     [Produces("application/json")]
@@ -18,6 +21,10 @@ namespace alatech.Controllers
             _fonteRepository = contexto;
         }
 
+        /// <summary>
+        /// Endpoint de listagem de fontes
+        /// </summary>
+        /// <returns>Lista de fontes em formato JSON</returns>
         [HttpGet]
         [Authorize]
         public IActionResult ListarFontes()
@@ -41,6 +48,11 @@ namespace alatech.Controllers
             }
         }
 
+        /// <summary>
+        /// Endpoint de busca de uma ou mais fontes por uma query (string)
+        /// </summary>
+        /// <param name="parametroBusca">Query de busca</param>
+        /// <returns>Fonte(s) em formato JSON</returns>
         [HttpGet("{parametroBusca}")]
         [Authorize]
         public IActionResult BuscarFontes(string parametroBusca)

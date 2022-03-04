@@ -8,6 +8,11 @@ namespace alatech.Utils
 {
     public static class Upload
     {
+        /// <summary>
+        /// Salva um arquivo de imagem .png no diretório StativFiles/Images
+        /// </summary>
+        /// <param name="arquivo">Arquivo .png</param>
+        /// <returns>Caminho completo da imagem em formato de string</returns>
         public static string UploadFile(IFormFile arquivo)
         {
             try
@@ -55,6 +60,11 @@ namespace alatech.Utils
             }
         }
 
+        /// <summary>
+        /// Valida a extensao do arquivo (.png)
+        /// </summary>
+        /// <param name="nomeDoArquivo">Nome do arquivo</param>
+        /// <returns>True (extensao .png) ou false (extensao != .png)</returns>
         public static bool ValidarExtensao(string nomeDoArquivo)
         {
             string[] dados = nomeDoArquivo.Split(".");
@@ -67,12 +77,21 @@ namespace alatech.Utils
             return false;
         }
 
+        /// <summary>
+        /// Retorna a extensção do nome do arquivo
+        /// </summary>
+        /// <param name="nomeDoArquivo">Nome do arquivo</param>
+        /// <returns>Extensao (ex: .png, .jpeg ...)</returns>
         public static string RetornarExtensao(string nomeDoArquivo)
         {
             string[] dados = nomeDoArquivo.Split(".");
             return dados[dados.Length - 1];
         }
 
+        /// <summary>
+        /// Remove um arquivo com base no nome
+        /// </summary>
+        /// <param name="nomeDoArquivo">Nome do arquivo</param>
         public static void RemoverArquivo(string nomeDoArquivo)
         {
             var pasta = Path.Combine("StaticFiles", "Images");
@@ -82,6 +101,11 @@ namespace alatech.Utils
             File.Delete(caminhoCompleto);
         }
 
+        /// <summary>
+        /// Busca uma imagem e a converte para uma string Base64
+        /// </summary>
+        /// <param name="IdImg">Nome da imagem salvo no Banco de Dados</param>
+        /// <returns>String Base64</returns>
         public static string BuscarEConverterImagem(int IdImg)
         {
             string NomeArquivo = IdImg.ToString() + ".png";

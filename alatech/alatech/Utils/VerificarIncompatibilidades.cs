@@ -1,5 +1,8 @@
 ﻿namespace alatech.Utils
 {
+    /// <summary>
+    /// Verifica diferentes casos de possíveis incompatibilidades em uma máquina
+    /// </summary>
     public static class VerificarIncompatibilidades
     {
         public static string TipoSoqueteProcessador_PlacaMae(int IdTipoSoquetePlacaMae, int IdSoqueteProcessador)
